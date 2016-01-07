@@ -21,8 +21,15 @@ $(document).ready(function(){
       //if a button is clicked increment the image counter
       $(".btn-lg").on("click", function(e) {
         e.preventDefault();
-        imageCounter++;
-        alert("the counter is " + imageCounter);
+        //if the image has been clicked do not count it
+        if (this.getAttribute("data-state") === "notclicked"){
+          imageCounter++;
+          $(this).attr("data-state", "clicked");
+          alert("the counter is " + imageCounter);
+        }
+        else {
+          alert("the button has been clicked");
+        }
       });
     }
     else if (this.getAttribute("data-state") === "stop"){
