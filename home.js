@@ -58,6 +58,7 @@ $(document).ready(function(){
         clearInterval(checkTimer);
         $(".btn-lg").off("click");
         alert("Time is up " + secondsCounter + " seconds " + "you clicked " + imageCounter + " images");
+        $("#endGameModel").modal('show');
       } 
     }
 
