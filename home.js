@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
   var secondsCounter = 0;
   var timerInterval;
   var checkTimer;
@@ -27,7 +26,7 @@ $(document).ready(function(){
           alert("the counter is " + imageCounter);
         }
         else {
-          alert("You have already clicked this one");
+          $("#clickedModal").modal('show');
         }
       });
     }
@@ -43,7 +42,6 @@ $(document).ready(function(){
       clearInterval(checkTimer);
       secondsCounter = 0;
     }
-
 
     function incrementTimer() { 
       secondsCounter++;
@@ -61,8 +59,6 @@ $(document).ready(function(){
         $("#endGameModel").modal('show');
       } 
     }
-
-
 });
 
 
