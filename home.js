@@ -9,12 +9,11 @@ $(document).ready(function(){
   $("#startStopBtn").on("click", function(e) {
     e.preventDefault();
     $(".btn-lg").attr("data-state", "notclicked");
+    imageCounter = 0;
+    secondsCounter = 0;
     if (this.getAttribute("data-state") === "start") {
-      //alert("this works");
       $("#startStopBtn").attr("data-state", "stop");
       $("#startStopBtn").html("Click To Stop");
-      imageCounter = 0;
-      secondsCounter = 0;
       //a timer is started and secondsCounter is incremented every second
       timerInterval = setInterval(incrementTimer, 1000); 
       //the secondsCounter is checked every second
@@ -28,12 +27,13 @@ $(document).ready(function(){
           alert("the counter is " + imageCounter);
         }
         else {
-          alert("the button has been clicked");
+          alert("You have already clicked this one");
         }
       });
     }
 
-    else if (this.getAttribute("data-state") === "stop"){
+    //else if (this.getAttribute("data-state") === "stop"){
+    else {
       //removes the event handler from the buttons
       $(".btn-lg").off("click");
       $("#startStopBtn").attr("data-state", "start");
@@ -57,7 +57,7 @@ $(document).ready(function(){
         clearInterval(timerInterval); 
         clearInterval(checkTimer);
         $(".btn-lg").off("click");
-        alert("Time is up " + secondsCounter + " seconds");
+        alert("Time is up " + secondsCounter + " seconds " + "you clicked " + imageCounter + " images");
       } 
     }
 
