@@ -8,6 +8,7 @@ $(document).ready(function(){
 
   $("#startStopBtn").on("click", function(e) {
     e.preventDefault();
+    $(".btn-lg").attr("data-state", "notclicked");
     if (this.getAttribute("data-state") === "start") {
       //alert("this works");
       $("#startStopBtn").attr("data-state", "stop");
@@ -15,13 +16,12 @@ $(document).ready(function(){
       imageCounter = 0;
       secondsCounter = 0;
       //a timer is started and secondsCounter is incremented every second
-      timerInterval = setInterval(incrementTimer, 1000);
+      timerInterval = setInterval(incrementTimer, 1000); 
       //the secondsCounter is checked every second
       checkTimer = setInterval(checkSecondsCounter, 1000);
-      //if a button is clicked increment the image counter
       $(".btn-lg").on("click", function(e) {
         e.preventDefault();
-        //if the image has been clicked do not count it
+        //if the image has not been clicked count it
         if (this.getAttribute("data-state") === "notclicked"){
           imageCounter++;
           $(this).attr("data-state", "clicked");
@@ -32,6 +32,7 @@ $(document).ready(function(){
         }
       });
     }
+
     else if (this.getAttribute("data-state") === "stop"){
       //removes the event handler from the buttons
       $(".btn-lg").off("click");
