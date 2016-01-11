@@ -23,7 +23,7 @@ $(document).ready(function(){
         if (this.getAttribute("data-state") === "notclicked"){
           imageCounter++;
           $(this).attr("data-state", "clicked");
-          alert("the counter is " + imageCounter);
+          //alert("the counter is " + imageCounter);
         }
         else {
           $("#clickedModal").modal('show');
