@@ -8,8 +8,6 @@ $(document).ready(function(){
   $("#startStopBtn").on("click", function(e) {
     e.preventDefault();
     $(".btn-lg").attr("data-state", "notclicked");
-    // imageCounter = 0;
-    // secondsCounter = 0;
     if (this.getAttribute("data-state") === "start") {
       imageCounter = 0;
       secondsCounter = 0;
