@@ -24,6 +24,7 @@ $(document).ready(function() {
         if (this.getAttribute("data-state") === "notclicked"){
           imageCounter++;
           $(this).attr("data-state", "clicked");
+          $(this).css("color", "black");
           //alert("the counter is " + imageCounter);
         }
         else {
@@ -39,6 +40,8 @@ $(document).ready(function() {
       $("#startStopBtn").html("Click To Start");
       $("#buttonsClickedStop").html(imageCounter);
       $("#stopGameModel").modal('show');
+      $(".btn-lg").css("color", "white");
+
       //the timer is stopped and secondsCounter set to zero
       clearInterval(timerInterval); 
       clearInterval(checkTimer);
@@ -60,6 +63,7 @@ $(document).ready(function() {
         $("#buttonsClicked").html(imageCounter);
         //alert("Time is up " + secondsCounter + " seconds " + "you clicked " + imageCounter + " images");
         $("#endGameModel").modal('show');
+        $(".btn-lg").css("color", "white");
       } 
     }
   });
