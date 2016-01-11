@@ -61,7 +61,7 @@ $(document).ready(function(){
         $("#endGameModel").modal('show');
       } 
     }
-});
+  });
 
 
 
