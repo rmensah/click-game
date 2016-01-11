@@ -8,9 +8,11 @@ $(document).ready(function(){
   $("#startStopBtn").on("click", function(e) {
     e.preventDefault();
     $(".btn-lg").attr("data-state", "notclicked");
-    imageCounter = 0;
-    secondsCounter = 0;
+    // imageCounter = 0;
+    // secondsCounter = 0;
     if (this.getAttribute("data-state") === "start") {
+      imageCounter = 0;
+      secondsCounter = 0;
       $("#startStopBtn").attr("data-state", "stop");
       $("#startStopBtn").html("Click To Stop");
       //a timer is started and secondsCounter is incremented every second
@@ -31,12 +33,13 @@ $(document).ready(function(){
       });
     }
 
-    //else if (this.getAttribute("data-state") === "stop"){
     else {
       //removes the event handler from the buttons
       $(".btn-lg").off("click");
       $("#startStopBtn").attr("data-state", "start");
       $("#startStopBtn").html("Click To Start");
+      $("#buttonsClickedStop").html(imageCounter);
+      $("#stopGameModel").modal('show');
       //the timer is stopped and secondsCounter set to zero
       clearInterval(timerInterval); 
       clearInterval(checkTimer);
@@ -55,7 +58,8 @@ $(document).ready(function(){
         clearInterval(timerInterval); 
         clearInterval(checkTimer);
         $(".btn-lg").off("click");
-        alert("Time is up " + secondsCounter + " seconds " + "you clicked " + imageCounter + " images");
+        $("#buttonsClicked").html(imageCounter);
+        //alert("Time is up " + secondsCounter + " seconds " + "you clicked " + imageCounter + " images");
         $("#endGameModel").modal('show');
       } 
     }

@@ -67,6 +67,27 @@
 			</div> 
 		</div>
 	</div>	
+
+<!-- Model to signal that the user stoped the game -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="stopGameModel">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">You Stopped!</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>You clicked</p>
+	        <label id="buttonsClickedStop"></label>
+	        <p>buttons</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 <!-- Modal to signal that a button has already been clicked -->
 	<div class="modal fade" tabindex="-1" role="dialog" id="clickedModal">
 	  <div class="modal-dialog">
@@ -94,7 +115,9 @@
 	        <h4 class="modal-title">Well Done!</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>20 Seconds is up</p>
+	        <p>20 Seconds is up, you clicked</p>
+	        <label id="buttonsClicked"></label>
+	        <p>buttons</p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
