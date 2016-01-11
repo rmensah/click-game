@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
   var secondsCounter = 0;
   var timerInterval;
@@ -13,6 +13,7 @@ $(document).ready(function(){
       secondsCounter = 0;
       $("#startStopBtn").attr("data-state", "stop");
       $("#startStopBtn").html("Click To Stop");
+      $("#modalCertified").modal('show');
       //a timer is started and secondsCounter is incremented every second
       timerInterval = setInterval(incrementTimer, 1000); 
       //the secondsCounter is checked every second
@@ -62,12 +63,4 @@ $(document).ready(function(){
       } 
     }
   });
-
-
-
-
-
-
-
-
 });
