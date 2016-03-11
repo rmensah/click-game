@@ -15,7 +15,7 @@ $(document).ready(function() {
       $("#startStopBtn").html("Click To Stop");
       $("#modalCertified").modal('show');
       //a timer is started and secondsCounter is incremented every second
-      timerInterval = setInterval(incrementTimer, 1000); 
+      timerInterval = setInterval(incrementTimer, 1000);
       //the secondsCounter is checked every second
       checkTimer = setInterval(checkSecondsCounter, 1000);
       $(".btn-lg").on("click", function(e) {
@@ -26,14 +26,11 @@ $(document).ready(function() {
           $(this).attr("data-state", "clicked");
           $(this).css("color", "black");
           //alert("the counter is " + imageCounter);
-        }
-        else {
+        } else {
           $("#clickedModal").modal('show');
         }
       });
-    }
-
-    else {
+    } else {
       //removes the event handler from the buttons
       $(".btn-lg").off("click");
       $("#startStopBtn").attr("data-state", "start");
@@ -43,28 +40,29 @@ $(document).ready(function() {
       $(".btn-lg").css("color", "white");
 
       //the timer is stopped and secondsCounter set to zero
-      clearInterval(timerInterval); 
+      clearInterval(timerInterval);
       clearInterval(checkTimer);
       secondsCounter = 0;
-    }
 
-    function incrementTimer() { 
+      }
+
+    function incrementTimer() {
       secondsCounter++;
-     }
+    }
 
     //checks secondsCounter, if >= 20 seconds it ends the game
     function checkSecondsCounter() {
       if (secondsCounter >= 20 ) {
         $("#startStopBtn").attr("data-state", "start");
         $("#startStopBtn").html("Click To Start");
-        clearInterval(timerInterval); 
+        clearInterval(timerInterval);
         clearInterval(checkTimer);
         $(".btn-lg").off("click");
         $("#buttonsClicked").html(imageCounter);
         //alert("Time is up " + secondsCounter + " seconds " + "you clicked " + imageCounter + " images");
         $("#endGameModel").modal('show');
         $(".btn-lg").css("color", "white");
-      } 
+      }
     }
   });
 });
